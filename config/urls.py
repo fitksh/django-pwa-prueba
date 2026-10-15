@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from appPrueba import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path('crear-musician-post/', views.crear_musician_post, name='crear_musician_post'),
+    path('crear-musician-get/<str:nombre>/<str:apellido>/<str:instrument>/', views.crear_musician_get, name='crear_musician_get'),
 ]
